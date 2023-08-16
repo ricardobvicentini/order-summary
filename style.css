@@ -17,11 +17,19 @@
     --very-pale-blue: hsl(225, 100%, 98%);
     --desaturated-blue: hsl(224, 23%, 55%);
     --dark-blue: hsl(223, 47%, 23%);
+
+    /*  Dark */
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
 }
 
 html {
     font-size: 62.5%;
     font-family: 'Red Hat Display', sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -36,6 +44,7 @@ img {
 }
 
 body {
+    position: relative;
     width: 100vw;
     min-height: 100vh;
     background-color: var(--pale-blue);
@@ -43,6 +52,7 @@ body {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 main {
@@ -73,9 +83,9 @@ main {
 }
 
 .container__image img {
-        object-fit: fill;
-        height: 100%;
-    }
+    object-fit: fill;
+    height: 100%;
+}
 
 .container__body {
     width: 85%;
@@ -160,7 +170,7 @@ main {
     }
 }
 
-.container__buttons .btn-1 {
+.btn-1 {
     background-color: var(--bright-blue);
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 700;
@@ -190,7 +200,7 @@ main {
 
 .attribution {
     text-align: center;
-     font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: clamp(1rem, 3vw, 1.3rem);
 }
 
 .attribution a {
@@ -200,6 +210,54 @@ main {
 .attribution a:hover {
     color: var(--bright-blue);
     text-decoration: underline;
+}
+
+/* DARK MODE */
+
+.icons {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+}
+
+.icons i {
+    font-size: clamp(1rem, 5vh, 4rem);
+}
+
+.icon-moon i {
+    color: var(--desaturated-blue);
+}
+
+.icon-sun i {
+    color: #f8f9fe;
+}
+
+.dark-body {
+    background-color: var(--desaturated-blue);
+    background-image: url(images/pattern-background-mobile.svg);
+    background-blend-mode: multiply;
+}
+
+.dark-container {
+    background-color: var(--dark-blue);
+}
+
+.container__image-dark {
+    background-color: var(--dark-blue);
+    filter: saturate(50%)
+}
+
+.container__text-dark h1 {
+    color: #fff;
+}
+
+.btn-1-dark {
+    background-color: var(--pale-blue);
+    color: var(--dark-blue);
+}
+
+.attribution-dark {
+    color: #fff;
 }
 
 @media (orientation: landscape) and (height <= 500px) {
