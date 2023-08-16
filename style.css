@@ -17,13 +17,6 @@
     --very-pale-blue: hsl(225, 100%, 98%);
     --desaturated-blue: hsl(224, 23%, 55%);
     --dark-blue: hsl(223, 47%, 23%);
-
-    /*  Dark */
-    --pale-blue: hsl(225, 100%, 94%);
-    --bright-blue: hsl(245, 75%, 52%);
-    --very-pale-blue: hsl(225, 100%, 98%);
-    --desaturated-blue: hsl(224, 23%, 55%);
-    --dark-blue: hsl(223, 47%, 23%);
 }
 
 html {
@@ -101,7 +94,7 @@ main {
     max-height: 20%;
 }
 
-.container__text h1 {
+.text__h1 {
     font-size: clamp(1.8rem, 6vw, 2.3rem);
     font-weight: 900;
     color: var(--dark-blue);
@@ -181,11 +174,11 @@ main {
     transition: 200ms ease-in-out;
 }
 
-.container__buttons .btn-1:hover {
+.btn-1:hover {
     background-color: rgb(118, 108, 241);
 }
 
-.container__buttons .btn-2 {
+.btn-2 {
     background-color: transparent;
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 900;
@@ -194,8 +187,8 @@ main {
     transition: 200ms ease-in-out;
 }
 
-.container__buttons .btn-2:hover {
-    color: var(--dark-blue);
+.btn-2:hover {
+    color: var(--bright-blue);
 }
 
 .attribution {
@@ -216,20 +209,27 @@ main {
 
 .icons {
     position: absolute;
-    top: 5%;
+    top: 2%;
     right: 2%;
 }
 
-.icons i {
+.icon-moon {
     font-size: clamp(1rem, 5vh, 4rem);
-}
-
-.icon-moon i {
     color: var(--desaturated-blue);
 }
 
-.icon-sun i {
+.icon-moon-hide {
+    display: none;
+}
+
+.icon-sun {
+    font-size: clamp(1rem, 5vh, 4rem);
     color: #f8f9fe;
+    display: none;
+}
+
+.icon-sun-show {
+    display: block;
 }
 
 .dark-body {
@@ -240,6 +240,7 @@ main {
 
 .dark-container {
     background-color: var(--dark-blue);
+    box-shadow: 0 5px 15px 5px hsla(228, 100%, 98%, 0.15);
 }
 
 .container__image-dark {
@@ -247,13 +248,14 @@ main {
     filter: saturate(50%)
 }
 
-.container__text-dark h1 {
+.text__h1-dark {
     color: #fff;
 }
 
 .btn-1-dark {
     background-color: var(--pale-blue);
     color: var(--dark-blue);
+    box-shadow: 0 8px 15px 5px hsla(228, 100%, 98%, 0.15);
 }
 
 .attribution-dark {
@@ -269,7 +271,6 @@ main {
         grid-template-rows: 50% 50%;
         grid-template-columns: 50% 50%;
         place-items: center;
-        box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.13);
     }
 
     .container__image {
