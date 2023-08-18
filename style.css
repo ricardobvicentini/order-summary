@@ -46,19 +46,19 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     overflow-x: hidden;
-    animation: bodyAppear 500ms ease-in-out;
+    animation: bodyAppear 700ms ease-in-out;
 }
 
 @keyframes bodyAppear {
     from {
         opacity: 0;
-        transform: scale(0.3);
-        filter: blur(15px);
+        transform: rotate(-180deg) scale(0.3);
+        filter: blur(20px);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: rotate(0) scale(1);
         filter: blur(0);
     }
     
@@ -253,19 +253,19 @@ main {
     background-color: var(--desaturated-blue);
     background-image: url(images/pattern-background-mobile.svg);
     background-blend-mode: multiply;
-    animation: bodyDarkAppear 500ms ease-in-out;
+    animation: bodyDarkAppear 700ms ease-in-out;
 }
 
 @keyframes bodyDarkAppear {
             from {
                 opacity: 0;
-                transform: scale(0.3);
-                filter: blur(15px);
+                transform: rotate(180deg) scale(0.3);
+                filter: blur(20px);
             }
         
             to {
                 opacity: 1;
-                transform: scale(1);
+                transform: rotate(0) scale(1);
                 filter: blur(0);
             }
         }   
