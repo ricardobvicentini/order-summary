@@ -8,6 +8,7 @@ document.addEventListener("readystatechange", function (event) {
 
 const initApp = () => {
     const myBody = document.querySelector('.body');
+    const myMain = document.querySelector('.main');
     const myContainer = document.querySelector('.container');
     const myImage = document.querySelector('.container__image');
     const myText = document.querySelector('.text__h1');
@@ -20,7 +21,8 @@ const initApp = () => {
 
     myIcon.addEventListener('click', (event) => {
         myMoon.classList.toggle('icon-moon-hide');
-        mySun.classList.toggle("icon-sun-show");
+        mySun.classList.toggle('icon-sun-show');
+        myMain.classList.toggle('dark-main');
         myBody.classList.toggle('dark-body');
         myContainer.classList.toggle('dark-container');
         myImage.classList.toggle('container__image-dark');

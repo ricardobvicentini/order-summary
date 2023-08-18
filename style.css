@@ -46,10 +46,19 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     overflow-x: hidden;
-    animation: bodyAppear 700ms ease-in-out;
 }
 
-@keyframes bodyAppear {
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 3rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: mainAppear 700ms ease-in-out;
+}
+
+@keyframes mainAppear {
     from {
         opacity: 0;
         transform: rotate(-180deg) scale(0.3);
@@ -62,14 +71,6 @@ body {
         filter: blur(0);
     }
     
-}
-
-main {
-    width: 100%;
-    min-height: calc(100vh - 3rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
@@ -211,6 +212,22 @@ main {
 .attribution {
     text-align: center;
     font-size: clamp(1rem, 3vw, 1.3rem);
+    animation: attrAppear 800ms 400ms ease-in-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes attrAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+        filter: blur(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
 }
 
 .attribution a {
@@ -253,22 +270,26 @@ main {
     background-color: var(--desaturated-blue);
     background-image: url(images/pattern-background-mobile.svg);
     background-blend-mode: multiply;
-    animation: bodyDarkAppear 700ms ease-in-out;
 }
 
-@keyframes bodyDarkAppear {
-            from {
-                opacity: 0;
-                transform: rotate(180deg) scale(0.3);
-                filter: blur(20px);
-            }
-        
-            to {
-                opacity: 1;
-                transform: rotate(0) scale(1);
-                filter: blur(0);
-            }
-        }   
+
+.dark-main {
+    animation: mainDarkAppear 700ms ease-in-out;
+}
+
+@keyframes mainDarkAppear {
+    from {
+        opacity: 0;
+        transform: rotate(180deg) scale(0.3);
+        filter: blur(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+        filter: blur(0);
+    }
+}
 
 .dark-container {
     background-color: var(--dark-blue);
@@ -292,6 +313,22 @@ main {
 
 .attribution-dark {
     color: #fff;
+    animation: attrDarkAppear 800ms 400ms ease-in-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes attrDarkAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+        filter: blur(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
 }
 
 @media (orientation: landscape) and (height <= 500px) {
