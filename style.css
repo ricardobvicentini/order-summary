@@ -191,11 +191,28 @@ main {
     border-radius: 10px;
     height: clamp(5rem, 10vw, 6rem);
     box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.13);
-    transition: 200ms ease-in-out;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
 }
 
-.btn-1:hover {
+.btn-1::after {
+    content: '';
+    position: absolute;
     background-color: rgb(118, 108, 241);
+    border-radius: 10px;
+    border: 2px solid var(--bright-blue);
+    inset: 0;
+    z-index: -1;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 300ms ease-in-out;
+}
+
+.btn-1:hover::after,
+.btn-1:focus-visible::after {
+    transform-origin: left;
+    scale: 1 1;
 }
 
 .btn-2 {
